@@ -9,13 +9,14 @@ import TextField from 'components/TextField/TextField'
 
 function Copyright() {
   return (
-    <React.Fragment>
+    <>
       {'© '}
       <Link color="inherit" href="https://mui.com/">
         Your Website
-      </Link>{' '}
+      </Link>
+      {' '}
       {new Date().getFullYear()}
-    </React.Fragment>
+    </>
   );
 }
 

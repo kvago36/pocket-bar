@@ -23,7 +23,7 @@ function Header() {
             href="/premium-themes/onepirate/"
             sx={{ fontSize: 24 }}
           >
-            {'onepirate'}
+            Pocket-Bar
           </Link>
           <Box sx={{ flex: 1, display: 'flex', justifyContent: 'flex-end' }}>
             <Link
@@ -33,7 +33,7 @@ function Header() {
               href="/premium-themes/onepirate/sign-in/"
               sx={rightLink}
             >
-              {'Sign In'}
+              Sign In
             </Link>
             <Link
               variant="h6"
@@ -41,7 +41,7 @@ function Header() {
               href="/premium-themes/onepirate/sign-up/"
               sx={{ ...rightLink, color: 'secondary.main' }}
             >
-              {'Sign Up'}
+              Sign Up
             </Link>
           </Box>
         </Toolbar>

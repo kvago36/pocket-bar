@@ -6,7 +6,14 @@ import './index.css'
 
 import App from './App'
 
+import { worker } from './mocks/browser'
+
 import reportWebVitals from './reportWebVitals'
+
+// Start the mocking conditionally.
+if (process.env.NODE_ENV === 'development') {
+  worker.start()
+}
 
 ReactDOM.render(
   <React.StrictMode>
@@ -14,7 +21,7 @@ ReactDOM.render(
       <App />
     </BrowserRouter>
   </React.StrictMode>,
-  document.getElementById('root')
+  document.getElementById('root'),
 );
 
 // If you want to start measuring performance in your app, pass a function

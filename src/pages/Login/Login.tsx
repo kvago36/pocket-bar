@@ -1,31 +1,31 @@
 import {
   useNavigate,
-  useLocation
+  useLocation,
 } from 'react-router-dom'
 
 import useAuth from 'hooks/useAuth'
-
-interface CustomizedState {
-  from: From
-}
 
 interface From {
   pathname: string
 }
 
-const LoginPage = () => {
-  let navigate = useNavigate();
-  let location = useLocation();
-  let auth = useAuth();
+interface CustomizedState {
+  from: From
+}
+
+function LoginPage() {
+  const navigate = useNavigate();
+  const location = useLocation();
+  const auth = useAuth();
 
   const state = location.state as CustomizedState;
-  let from = state ? state.from?.pathname : '/';
+  const from = state ? state.from?.pathname : '/';
 
   function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
 
-    let formData = new FormData(event.currentTarget);
-    let username = formData.get("username") as string;
+    const formData = new FormData(event.currentTarget);
+    const username = formData.get('username') as string;
 
     auth.signin(username, () => {
       // Send them back to the page they tried to visit when they were
@@ -40,12 +40,18 @@ const LoginPage = () => {
 
   return (
     <div>
-      <p>You must log in to view the page at {from}</p>
+      <p>
+        You must log in to view the page at
+        {from}
+      </p>
 
       <form onSubmit={handleSubmit}>
-        <label>
-          Username: <input name="username" type="text" />
-        </label>{" "}
+        <label htmlFor="username">
+          Username:
+          {' '}
+          <input name="username" type="text" />
+        </label>
+        {' '}
         <button type="submit">Login</button>
       </form>
     </div>

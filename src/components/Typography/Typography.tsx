@@ -82,7 +82,9 @@ function Typography<C extends React.ElementType>(
     WithStyles<typeof styles> &
     ExtraTypographyProps,
 ) {
-  const { children, variant, classes, marked = 'none', ...other } = props;
+  const {
+    children, variant, classes, marked = 'none', ...other
+  } = props;
 
   let markedClassName = '';
   if (variant && variant in markStyleMapping[marked]) {
